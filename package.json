@@ -4,6 +4,7 @@
   "description": "Add and devour burgers!",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "nodemon server.js"
   },
   "repository": {
