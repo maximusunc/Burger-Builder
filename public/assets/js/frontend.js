@@ -27,9 +27,13 @@ $(function() {
 		});
 	});
 	$(".makeAnother").on("click", function(event) {
-		var name = $(this).data("id");
-		$("#burger").val(name);
-		$("#createBurger").click();
+		var id = $(this).attr("id");
+		$.ajax("/api/burgers/" + id, {
+			type: "PUT",
+		}).then(function() {
+			console.log("Successfully devoured!");
+			location.reload();
+		});
 	});
 	$(".delete").on("click", function(event) {
 		var id = $(this).attr("id");
