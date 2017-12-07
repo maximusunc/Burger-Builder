@@ -4,22 +4,24 @@ var router = express.Router();
 
 router.get("/", function(req, res) {
 	burger.all(function(data) {
-		console.log(data);
+		var burgerObj = {
+			burger: data
+		};
+		res.render("index", burgerObj);
 	});
 });
 
 router.post("/api/burgers", function(req, res) {
 	var burgerName = req.body.burger;
-	burger.create("burger_name", "devour", burgerName, false, function(data) {
-		console.log(data);
+	burger.create("burger_name", "devoured", burgerName, false, function(data) {
+		res.json(data);
 	});
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-	var burgerName = req.body.burger;
 	var id = req.params.id;
-	burger.update("burger_name", burgerName, id, function(data) {
-		console.log(data);
+	burger.update(id, function(data) {
+		res.json(data);
 	});
 });
 

@@ -1,0 +1,67 @@
+* {
+	background-color: mediumaquamarine;
+}
+h1 {
+	font-size: 50px;
+	text-align: center;
+	clear: both;
+}
+form {
+	text-align: center;
+	clear: both;
+	margin: 20px 0px;
+}
+input, button {
+	background-color: #ffff;
+}
+form button {
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+	padding: 5px;
+}
+input {
+	width: 15%;
+}
+img {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.clearfix {
+	margin: auto;
+	width: 50%;
+	height: 100%;
+	position: relative;
+}
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.undevoured {
+	width: 50%;
+}
+.devoured {
+	float: right;
+	width: 50%;
+	text-align: center;
+}
+.devoured p {
+	background-color: grey;
+	text-align: left;
+	padding: 10px 10px;
+}
+.undevoured p {
+	display: inline-block;
+	width: 65%;
+	text-align: center;
+	background-color: #ffff;
+	padding: 5px 0px 15px 0px;
+}
+.undevoured .devour {
+	margin: 5px 10px;
+	width: 25%;
+	background-color: #ffff;
+}
+ 

@@ -5,23 +5,25 @@ var orm = {
 		var query = "SELECT * FROM " + table;
 		connection.query(query, function(err, data) {
 			if (err) throw err;
-			cd.json(data);
+			cb(data);
 		});
 	},
 	insertOne: function(table, colName1, colName2, colValue1, colValue2, cb) {
-		var query = "INSERT INTO " + table + " (" + colName + ", " + colName2 + ") ";
-		query += "VALUES (" + colValue1 + ", " + colValue2 + ")";
+		var query = "INSERT INTO " + table + " (" + colName1 + ", " + colName2 + ") ";
+		query += "VALUES('" + colValue1 + "', " + colValue2 + ")";
+		console.log(query);
 		connection.query(query, function(err, result) {
 			if (err) throw err;
-			cb.status(200).end();
+			cb(result);
 		});
 	},
 	updateOne: function(table, colName, colValue, id, cb) {
 		var query = "UPDATE " + table;
 		query += " SET " + colName + " = " + colValue + " WHERE id = " + id;
+		console.log(query);
 		connection.query(query, function(err, result) {
 			if (err) throw err;
-			cb.status(200).end();
+			cb(result);
 		});
 	}
 };
