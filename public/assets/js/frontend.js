@@ -27,14 +27,10 @@ $(function() {
 		});
 	});
 	$(".makeAnother").on("click", function(event) {
-		var id = $(this).attr("id");
-		$.ajax("/api/burgers/" + id, {
-			type: "PUT",
-		}).then(function() {
-			console.log("Successfully made another!");
-			location.reload();
-		});
-	})
+		var name = $(this).data("id");
+		$("#burger").val(name);
+		$("#createBurger").click();
+	});
 	$(".delete").on("click", function(event) {
 		var id = $(this).attr("id");
 		$.ajax("/api/burgers/" + id, {
