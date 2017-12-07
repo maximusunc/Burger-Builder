@@ -26,4 +26,22 @@ $(function() {
 			location.reload();
 		});
 	});
+	$(".makeAnother").on("click", function(event) {
+		var id = $(this).attr("id");
+		$.ajax("/api/burgers/" + id, {
+			type: "PUT",
+		}).then(function() {
+			console.log("Successfully made another!");
+			location.reload();
+		});
+	})
+	$(".delete").on("click", function(event) {
+		var id = $(this).attr("id");
+		$.ajax("/api/burgers/" + id, {
+			type: "DELETE",
+		}).then(function() {
+			console.log("Successfully deleted");
+			location.reload();
+		}); 
+	});
 });

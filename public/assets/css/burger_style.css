@@ -20,6 +20,9 @@ form button {
 	margin-top: 10px;
 	padding: 5px;
 }
+p button {
+	float: right;
+}
 input {
 	width: 15%;
 }
